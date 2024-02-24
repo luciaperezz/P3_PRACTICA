@@ -3,6 +3,32 @@
         <title>Calculadora de CORE</title>
         <meta charset="UTF-8">
     </head>
+
+    <script type="text/javascript">
+     //OPERACIONES UTILES PARA TOMAR EL VALOR PASADO Y USARLO
+        
+     const getInputValue = () => {
+        return Number(document.getElementById("pantalla").value);
+       };
+
+       const setInputValue = (valor) => {
+        document.getElementById("pantalla").value = valor;
+       };
+
+       //OPERACIONES UNITARIAS
+
+       const sq = () => {
+           let inputValue = getInputValue();
+           setInputValue(inputValue*insputValue);
+
+       };
+
+       const onload = () => {
+        document.getElementById("cuadrado").addEventListener("click",sq)
+       };
+       
+       window.onload = onload ;
+
     <body>
         <h1 class="cabecera">Calculadora de CORE</h1>
         <div id="inputtexto">
@@ -14,27 +40,5 @@
             <button id="cuadrado">x<sup>2</sup></button> 
         </div>
     </body>
-    <script type="text/javascript">
-        //OPERACIONES UTILES PARA TOMAR EL VALOR PASADO Y USARLO
-       const getInputValue = () => {
-        return Number(document.getElementById("pantalla").value);
-       };
-
-       const setInputValue = (valor) => {
-        document.getElementById("pantalla").value = valor;
-       }
-
-       //OPERACIONES UNITARIAS
-
-       const sq = () => {
-           let input = getInputValue();
-           setInputValue(input*insput);
-
-       }
-       const onload = () => {
-        document.getElementById("cuadrado").addEventListener("click",sq)
-       }
-       window.onload = onload ;
-    </script>
-</html>
+   </html>
 
