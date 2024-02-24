@@ -15,7 +15,7 @@
         </div>
     </body>
     <script type="text/javascript">
-        
+        //OPERACIONES UTILES PARA TOMAR EL VALOR PASADO Y USARLO
        const getInputValue = () => {
         return Number(document.getElementById("pantalla").value);
        };
@@ -24,6 +24,17 @@
         document.getElementById("pantalla").value = valor;
        }
 
+       //OPERACIONES UNITARIAS
+
+       const sq = () => {
+           let input = getInputValue();
+           setInputValue(input*insput);
+
+       }
+       const onload = () => {
+        document.getElementById("cuadrado").addEventListener("click",sq)
+       }
+       window.onload = onload ;
     </script>
 </html>
 
