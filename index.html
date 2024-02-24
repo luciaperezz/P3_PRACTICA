@@ -12,15 +12,28 @@
        const setInputValue = (valor) => {
             document.getElementById("pantalla").value = valor;
         };
+
+        //OPERACIONES UNITARIAS
         const sq = () => {
             let inputValue = getInputValue();
             setInputValue(inputValue*inputValue);
         };
-        const onload = () => {
-            document.getElementById("cuadrado").addEventListener("click",sq)
-        };
-        window.onload =onload;
 
+        const fact = () => {
+            let inputValue = getInputValue();
+            let resultado = 1;
+            for (let index = inputValue; index > 1; index--){
+                resultado *= index;
+            }
+            setInputValue(resultado);
+        };
+
+        const onload = () => {
+            document.getElementById("cuadrado").addEventListener("click",sq);
+            document.getElementById("factorial").addEventListener("click",fact);
+        };
+
+        window.onload =onload;
     </script>
 
 
@@ -34,6 +47,7 @@
         <div id="opUnitarias">
             <h2>Operaciones unitarias</h2>
             <button id="cuadrado">x<sup>2</sup></button> 
+            <button id="factorial">x!</button>
         </div>
     </body>
    </html>
