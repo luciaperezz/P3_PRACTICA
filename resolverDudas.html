@@ -1,0 +1,49 @@
+<!-- QUE ME PLANTEO A LA HORA DE CREAR EL BOTÓN
+1. Crear botón
+2. Capturar evento del boton
+
+En el evento
+3. capturar valor del input
+4. hacer la operacion Blah Blah a dicho valor
+5. actualizar valor del input -->
+
+<!-- El codigo se lee de arriba a abajo, 
+Si colocas el script por encima del body dara erroes, porque estas llamando a funciones que aun no existen 
+<html>
+    <script>
+        const funcionCarga = () => {
+            document.getElementById("titulo").innerHTML = "NUEVO TITULO";
+        };
+    </script>
+    <body>
+        <h1 id="tiulo">Hello World!</h1>
+    </body>
+</html>
+-->
+<!-- Para solucionar esto, 3 OPCIONES 
+    Opcion 1: Cambiar el orden y poner el bosy delante del script
+    Opcion 2: Poner onload en body
+    Opcion 3: Poner window.onload en script
+-->
+<html>
+    <script>
+        const funcionCarga1 = () => {
+            document.getElementById("titulo").innerHTML = "NUEVO TITULO";
+        };
+    </script>
+    <body onload="funcionCarga1">
+        <h1 id="tiulo">Hello World!</h1>
+    </body>
+</html>
+
+<html>
+    <script>
+        const funcionCarga2 = () => {
+            document.getElementById("titulo").innerHTML = "NUEVO TITULO";
+        };
+        window.onload = funcionCarga2;
+    </script>
+    <body onload="funcionCarga2">
+        <h1 id="tiulo">Hello World!</h1>
+    </body>
+</html>
