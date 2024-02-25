@@ -50,7 +50,7 @@
                     break;
                 case "+":
                     acumulador += n;
-                    breack;
+                    break;
             }
         };
 
@@ -60,11 +60,19 @@
             vaciarInput();
         };
 
+        const eq = () => {
+            acumula(getInputValue());
+            operador = "=";
+            vaciarInput();
+            setInputValue(acumulador);
+        };
+
         const onload = () => {
             document.getElementById("cuadrado").addEventListener("click",sq);
             document.getElementById("factorial").addEventListener("click",fact);
             document.getElementById("raiz").addEventListener("click",sqr);
-            document.getElementById("suma").addEventListener("click",add);       
+            document.getElementById("suma").addEventListener("click",add);
+            document.getElementById("igual").addEventListener("click",eq);
 
         };
 
@@ -88,6 +96,7 @@
         <div id="opBinarias">
             <h3>Operaciones Binarias</h3>
             <button id="suma"> + </button>
+            <button id="igual"> = </button>
 
         </div>
     </body>
