@@ -108,9 +108,9 @@
             const resultadoInput = getInputValue();
             let mensaje = "";
 
-          //  if(Number.isNaN(resultadoInput)){
-          //      mensaje
-          //  }
+            if(Number.isNaN(resultadoInput)){
+                mensaje = "Error";
+            }
 
           if (resultadoInput < 100){
             mensaje = "Info: El resultado es menor que 100";
@@ -123,6 +123,14 @@
           }
 
           document.getElementById("info").innerHTML = mensaje;
+        }
+
+        const validar = () => {
+            if(Number.isNaN(getInputValue())){
+                setInputValue("Error");
+                return false;
+            }
+            return true;
         }
 
 
