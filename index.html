@@ -77,10 +77,28 @@
 
             actualizarInfo();
         };
+        
+        const rellenarInfo = () => {
+            const resultadoInput = getInputValue();
+            let mensaje = "";
 
-        const actualizarInfo = () => {
-            document.getElementById("info").innerHTML = "INFO CON LA QUE RELLENAR"
+          //  if(Number.isNaN(resultadoInput)){
+          //      mensaje
+          //  }
+
+          if (resultadoInput < 100){
+            mensaje = "Info: El resultado es menor que 100";
+          }
+          else if (resultadoInput <= 200){
+            mensaje = "Info: El resultado está entre 100 y 200";
+          }
+          else {
+            mensaje = "Info: El resultado es superior a 200";
+          }
+
+          document.getElementById("info").innerHTML = mensaje;
         }
+
         //RESTA
         const sub = () => {
             acumula(getInputValue());
@@ -125,7 +143,7 @@
             <input type="text" id="pantalla">
         </div>
 
-        <h2 id="info" class="grande">Información sobre el número</h2>
+        <h2 id="info" class="grande">Info sobre el número</h2>
         
         <div id="opUnitarias">
             <h3>Operaciones unitarias</h3>
