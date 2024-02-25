@@ -22,6 +22,7 @@
         const sq = () => {
             let inputValue = getInputValue();
             setInputValue(inputValue*inputValue);
+            rellenarInfo();
         };
 
         const fact = () => {
@@ -31,12 +32,14 @@
                 resultado *= index;
             }
             setInputValue(resultado);
+            rellenarInfo();
         };
 
         const sqr = () => {
             let inputValue = getInputValue();
             let resultado = Math.sqrt(inputValue);
             setInputValue(resultado);
+            rellenarInfo();
         };
 
         //OPERACIONES BINARIAS
@@ -67,6 +70,8 @@
             acumula(getInputValue());
             operador = "+";
             vaciarInput();
+            rellenarInfo();
+
         };
         //IGUAL
         const eq = () => {
@@ -74,10 +79,31 @@
             operador = "=";
             vaciarInput();
             setInputValue(acumulador);
-
-            actualizarInfo();
+            rellenarInfo();
         };
-        
+
+        //RESTA
+        const sub = () => {
+            acumula(getInputValue());
+            operador = "-";
+            vaciarInput();
+            rellenarInfo();
+        };
+        //MULTIPLICACION
+        const mul = ()=> {
+            acumula(getInputValue());
+            operador = "*";
+            vaciarInput();
+            rellenarInfo();
+        };
+        //DIVISION
+        const div = () => {
+            acumula(getInputValue());
+            operador = "/";
+            vaciarInput();
+            rellenarInfo();
+        };
+
         const rellenarInfo = () => {
             const resultadoInput = getInputValue();
             let mensaje = "";
@@ -98,25 +124,6 @@
 
           document.getElementById("info").innerHTML = mensaje;
         }
-
-        //RESTA
-        const sub = () => {
-            acumula(getInputValue());
-            operador = "-";
-            vaciarInput();
-        };
-        //MULTIPLICACION
-        const mul = ()=> {
-            acumula(getInputValue());
-            operador = "*";
-            vaciarInput();
-        };
-        //DIVISION
-        const div = () => {
-            acumula(getInputValue());
-            operador = "/";
-            vaciarInput();
-        };
 
 
         const onload = () => {
