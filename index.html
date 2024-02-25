@@ -108,29 +108,29 @@
             const resultadoInput = getInputValue();
             let mensaje = "";
 
-            if(Number.isNaN(resultadoInput)){
-                mensaje = "Error";
+            if (Number.isNaN(resultadoInput)) {
+                    mensaje = "ERROR";
+                }
+            else {
+                if (resultadoInput < 100){
+                    mensaje = "Info: El resultado es menor que 100";
+                }
+                else if (resultadoInput <= 200){
+                    mensaje = "Info: El resultado está entre 100 y 200";
+                }
+                else {
+                    mensaje = "Info: El resultado es superior a 200";
+                }
+            }
+            document.getElementById("info").innerHTML = mensaje;
             }
 
-          if (resultadoInput < 100){
-            mensaje = "Info: El resultado es menor que 100";
-          }
-          else if (resultadoInput <= 200){
-            mensaje = "Info: El resultado está entre 100 y 200";
-          }
-          else {
-            mensaje = "Info: El resultado es superior a 200";
-          }
-
-          document.getElementById("info").innerHTML = mensaje;
-        }
-
-        const validar = () => {
-            if(Number.isNaN(getInputValue())){
-                setInputValue("Error");
-                return false;
-            }
-            return true;
+            const validar = () => {
+                if(Number.isNaN(getInputValue())){
+                    setInputValue("Error");
+                    return false;
+                }
+                return true;
         }
 
 
