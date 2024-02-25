@@ -158,7 +158,11 @@
                     return false;
                 }
                 return true;
-        }
+        };
+
+        const clearScreen= () => {
+            document.getElementById("pantalla").value = 0;
+        };
 
 
         const onload = () => {
@@ -170,7 +174,9 @@
             document.getElementById("resta").addEventListener("click",sub);
             document.getElementById("multiplicacion").addEventListener("click",mul);
             document.getElementById("division").addEventListener("click",div);
-
+            document.getElementById("clearScreen").addEventListener("click",clearScreen);
+            document.getElementById("clearAll").addEventListener("click",vaciarInput);
+ 
             //Que se vacie la caja del input al darle clik
             document.getElementById("inputTexto").addEventListener("click", vaciarInput);
         };
@@ -204,7 +210,7 @@
             <button id="igual"> = </button>
         </div>
 
-        <h5 id="limpieza">limpieza</h5>
+        <h5 id="limpieza">Limpieza</h5>
         <div>
             <button id="clearScreen"> C </button>
             <button id="clearAll"> AC </button>
