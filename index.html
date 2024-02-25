@@ -74,7 +74,13 @@
             operador = "=";
             vaciarInput();
             setInputValue(acumulador);
+
+            actualizarInfo();
         };
+
+        const actualizarInfo = () => {
+            document.getElementById("info").innerHTML = "INFO CON LA QUE RELLENAR"
+        }
         //RESTA
         const sub = () => {
             acumula(getInputValue());
@@ -114,18 +120,21 @@
 
     <body>
         <h1 class="cabecera">Calculadora de CORE</h1>
-        <div id="inputtexto">
+        <div id="inputTexto">
             <label for="pantalla">Número</label>
             <input type="text" id="pantalla">
         </div>
+
+        <h2 id="info" class="grande">Información sobre el número</h2>
+        
         <div id="opUnitarias">
-            <h2>Operaciones unitarias</h2>
+            <h3>Operaciones unitarias</h3>
             <button id="cuadrado">x<sup>2</sup></button> 
             <button id="factorial">x!</button>
             <button id="raiz">&#8730 x</button>
         </div>
         <div id="opBinarias">
-            <h3>Operaciones Binarias</h3>
+            <h4>Operaciones Binarias</h4>
             <button id="suma"> + </button>
             <button id="resta"> - </button>
             <button id="multiplicacion"> * </button>
