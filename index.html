@@ -13,6 +13,11 @@
             document.getElementById("pantalla").value = valor;
         };
 
+        //OPERACION PARA VACIAR LA CAJA DE NUMEROS Y PODER HACER OPERACIONES BINARIAS
+        const vaciarInput = () => {
+            document.getElementById("pantalla").value = "";
+        };
+
         //OPERACIONES UNITARIAS
         const sq = () => {
             let inputValue = getInputValue();
@@ -34,10 +39,32 @@
             setInputValue(resultado);
         };
 
+        //OPERACIONES BINARIAS
+        let acumulador = 0;
+        let operador = "";
+
+        const acumula = n => {
+            switch (operador){
+                case "":
+                    acumulador = n;
+                    break;
+                case "+":
+                    acumulador += n;
+                    breack;
+            }
+        };
+
+        const add = () => {
+            acumula(getInputValue());
+            operador = "+";
+            vaciarInput();
+        };
+
         const onload = () => {
             document.getElementById("cuadrado").addEventListener("click",sq);
             document.getElementById("factorial").addEventListener("click",fact);
             document.getElementById("raiz").addEventListener("click",sqr);
+            document.getElementById("suma").addEventListener("click",add);       
 
         };
 
@@ -57,6 +84,11 @@
             <button id="cuadrado">x<sup>2</sup></button> 
             <button id="factorial">x!</button>
             <button id="raiz">&#8730 x</button>
+        </div>
+        <div id="opBinarias">
+            <h3>Operaciones Binarias</h3>
+            <button id="suma"> + </button>
+
         </div>
     </body>
    </html>
