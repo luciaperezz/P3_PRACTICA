@@ -163,7 +163,10 @@
         const clearScreen= () => {
             document.getElementById("pantalla").value = 0;
         };
-
+        const clearAll () => {
+            clearScreen();
+            acumulador = 0;
+        }
 
         const onload = () => {
             document.getElementById("cuadrado").addEventListener("click",sq);
@@ -175,7 +178,7 @@
             document.getElementById("multiplicacion").addEventListener("click",mul);
             document.getElementById("division").addEventListener("click",div);
             document.getElementById("clearScreen").addEventListener("click",clearScreen);
-            document.getElementById("clearAll").addEventListener("click",vaciarInput);
+            document.getElementById("clearAll").addEventListener("click",clearAll);
  
             //Que se vacie la caja del input al darle clik
             document.getElementById("inputTexto").addEventListener("click", vaciarInput);
