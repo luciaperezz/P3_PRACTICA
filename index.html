@@ -20,12 +20,18 @@
 
         //OPERACIONES UNITARIAS
         const sq = () => {
+            if(!validar()){
+                return;
+            }
             let inputValue = getInputValue();
             setInputValue(inputValue*inputValue);
             rellenarInfo();
         };
 
         const fact = () => {
+            if(!validar()){
+                return;
+            }
             let inputValue = getInputValue();
             let resultado = 1;
             for (let index = inputValue; index > 1; index--){
@@ -36,6 +42,9 @@
         };
 
         const sqr = () => {
+            if(!validar()){
+                return;
+            }
             let inputValue = getInputValue();
             let resultado = Math.sqrt(inputValue);
             setInputValue(resultado);
@@ -67,6 +76,9 @@
         };
         //SUMA
         const add = () => {
+            if(!validar()){
+                return;
+            }
             acumula(getInputValue());
             operador = "+";
             vaciarInput();
@@ -75,6 +87,9 @@
         };
         //IGUAL
         const eq = () => {
+            if(!validar()){
+                return;
+            }
             acumula(getInputValue());
             operador = "=";
             vaciarInput();
@@ -84,6 +99,9 @@
 
         //RESTA
         const sub = () => {
+            if(!validar()){
+                return;
+            }
             acumula(getInputValue());
             operador = "-";
             vaciarInput();
@@ -91,6 +109,9 @@
         };
         //MULTIPLICACION
         const mul = ()=> {
+            if(!validar()){
+                return;
+            }
             acumula(getInputValue());
             operador = "*";
             vaciarInput();
@@ -98,6 +119,9 @@
         };
         //DIVISION
         const div = () => {
+            if(!validar()){
+                return;
+            }
             acumula(getInputValue());
             operador = "/";
             vaciarInput();
@@ -108,7 +132,7 @@
             const resultadoInput = getInputValue();
             let mensaje = "";
 
-            if (Number.isNaN(resultadoInput)) {
+            if (resultadoInput ==="Error") {
                     mensaje = "ERROR";
                 }
             else {
