@@ -4,8 +4,6 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="index.css">
 
-    </head>
-
     <script type="text/javascript">
         //OPERACIONES UTILES PARA TOMAR EL VALOR PASADO Y USARLO
         const getInputValue = () => {
@@ -19,6 +17,38 @@
         const vaciarInput = () => {
             document.getElementById("pantalla").value = "";
         };
+        
+        const validar = () => {
+                if (Number.isNaN(getInputValue())) {
+                    setInputValue("Error");
+                    return false;
+                }
+                return true;
+        };
+
+        const rellenarInfo = () => {
+            const resultadoInput = getInputValue();
+            let mensaje = "";
+
+            //if (resultadoInput ==="Error") {
+            //        mensaje = "ERROR";
+            //    }
+            if (Number.isNaN(resultadoInput)) {
+                mensaje = "ERROR";
+            }
+            else {
+                if (resultadoInput < 100){
+                    mensaje = "Info: El resultado es menor que 100";
+                }
+                else if (resultadoInput <= 200){
+                    mensaje = "Info: El resultado está entre 100 y 200";
+                }
+                else {
+                    mensaje = "Info: El resultado es superior a 200";
+                }
+            }
+            document.getElementById("info").innerHTML = mensaje;
+            }
 
         //OPERACIONES UNITARIAS
         const sq = () => {
@@ -87,18 +117,6 @@
             rellenarInfo();
 
         };
-        //IGUAL
-        const eq = () => {
-            if(!validar()){
-                return;
-            }
-            acumula(getInputValue());
-            operador = "=";
-            vaciarInput();
-            setInputValue(acumulador);
-            rellenarInfo();
-        };
-
         //RESTA
         const sub = () => {
             if(!validar()){
@@ -130,38 +148,20 @@
             rellenarInfo();
         };
 
-        const rellenarInfo = () => {
-            const resultadoInput = getInputValue();
-            let mensaje = "";
-
-            //if (resultadoInput ==="Error") {
-            //        mensaje = "ERROR";
-            //    }
-            if (Number.isNaN(resultadoInput)) {
-                mensaje = "ERROR";
+        //IGUAL
+        const eq = () => {
+            if(!validar()){
+                return;
             }
-            else {
-                if (resultadoInput < 100){
-                    mensaje = "Info: El resultado es menor que 100";
-                }
-                else if (resultadoInput <= 200){
-                    mensaje = "Info: El resultado está entre 100 y 200";
-                }
-                else {
-                    mensaje = "Info: El resultado es superior a 200";
-                }
-            }
-            document.getElementById("info").innerHTML = mensaje;
-            }
-
-            const validar = () => {
-                if(Number.isNaN(getInputValue())){
-                    setInputValue("Error");
-                    return false;
-                }
-                return true;
+            acumula(getInputValue());
+            operador = "=";
+            vaciarInput();
+            setInputValue(acumulador);
+            rellenarInfo();
         };
 
+
+ 
         const clearScreen= () => {
             document.getElementById("pantalla").value = 0;
         };
@@ -175,10 +175,10 @@
             document.getElementById("factorial").addEventListener("click",fact);
             document.getElementById("raiz").addEventListener("click",sqr);
             document.getElementById("suma").addEventListener("click",add);
-            document.getElementById("igual").addEventListener("click",eq);
             document.getElementById("resta").addEventListener("click",sub);
             document.getElementById("multiplicacion").addEventListener("click",mul);
             document.getElementById("division").addEventListener("click",div);
+            document.getElementById("igual").addEventListener("click",eq);
             document.getElementById("clearScreen").addEventListener("click",clearScreen);
             document.getElementById("clearAll").addEventListener("click",clearAll);
  
@@ -188,8 +188,7 @@
         
         window.onload =onload;
     </script>
-
-
+    </head>
 
     <body>
         <h1 class="cabecera">Calculadora de CORE</h1>
@@ -209,10 +208,10 @@
         <div id="opBinarias">
             <h2>Operaciones Binarias</h2>
             <button id="suma"> + </button>
-            <button id="igual"> = </button>
             <button id="resta"> - </button>
             <button id="multiplicacion"> * </button>
             <button id="division"> / </button>
+            <button id="igual"> = </button>
         </div>
 
         
