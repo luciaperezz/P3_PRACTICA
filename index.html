@@ -57,6 +57,9 @@
                 case "*":
                     acumulador *= n;
                     break;
+                case "/":
+                    acumulador /= n;
+                    break;
             }
         };
         //SUMA
@@ -84,6 +87,12 @@
             operador = "*";
             vaciarInput();
         };
+        //DIVISION
+        const div = () => {
+            acumula(getInputValue());
+            operador = "/";
+            vaciarInput();
+        };
 
 
         const onload = () => {
@@ -94,6 +103,7 @@
             document.getElementById("igual").addEventListener("click",eq);
             document.getElementById("resta").addEventListener("click",sub);
             document.getElementById("multiplicacion").addEventListener("click",mul);
+            document.getElementById("division").addEventListener("click",div);
 
         };
 
@@ -120,6 +130,7 @@
             <button id="igual"> = </button>
             <button id="resta"> - </button>
             <button id="multiplicacion"> * </button>
+            <button id="division"> / </button>
 
         </div>
     </body>
