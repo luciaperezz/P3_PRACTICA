@@ -42,7 +42,7 @@
         //OPERACIONES BINARIAS
         let acumulador = 0;
         let operador = "";
-
+        
         const acumula = n => {
             switch (operador){
                 case "":
@@ -51,28 +51,37 @@
                 case "+":
                     acumulador += n;
                     break;
+                case "-": 
+                    acumulador -= n;
+                    break;
             }
         };
-
+        //SUMA
         const add = () => {
             acumula(getInputValue());
             operador = "+";
             vaciarInput();
         };
-
+        //IGUAL
         const eq = () => {
             acumula(getInputValue());
             operador = "=";
             vaciarInput();
             setInputValue(acumulador);
         };
-
+        //RESTA
+        const sub = () => {
+            acumula(getInputValue());
+            operador = "-";
+            vaciarInput();
+        }
         const onload = () => {
             document.getElementById("cuadrado").addEventListener("click",sq);
             document.getElementById("factorial").addEventListener("click",fact);
             document.getElementById("raiz").addEventListener("click",sqr);
             document.getElementById("suma").addEventListener("click",add);
             document.getElementById("igual").addEventListener("click",eq);
+            document.getElementById("resta").addEventListener("click",sub);
 
         };
 
@@ -97,6 +106,7 @@
             <h3>Operaciones Binarias</h3>
             <button id="suma"> + </button>
             <button id="igual"> = </button>
+            <button id="resta"> - </button>
 
         </div>
     </body>
