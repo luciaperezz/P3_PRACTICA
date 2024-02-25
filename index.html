@@ -132,9 +132,12 @@
             const resultadoInput = getInputValue();
             let mensaje = "";
 
-            if (resultadoInput ==="Error") {
-                    mensaje = "ERROR";
-                }
+            //if (resultadoInput ==="Error") {
+            //        mensaje = "ERROR";
+            //    }
+            if (Number.isNaN(resultadoInput)) {
+                mensaje = "ERROR";
+            }
             else {
                 if (resultadoInput < 100){
                     mensaje = "Info: El resultado es menor que 100";
