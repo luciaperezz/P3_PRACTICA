@@ -88,7 +88,7 @@
         let operador = "";
         
         const acumula = n => {
-            switch (operador){
+            switch (operador) {
                 case "":
                     acumulador = n;
                     break;
@@ -104,8 +104,11 @@
                 case "/":
                     acumulador /= n;
                     break;
+                    
             }
         };
+
+        
         //SUMA
         const add = () => {
             if(!validar()){
@@ -158,6 +161,8 @@
             vaciarInput();
             setInputValue(acumulador);
             rellenarInfo();
+            acumulador = 0;
+            operador = "";
         };
 
 
